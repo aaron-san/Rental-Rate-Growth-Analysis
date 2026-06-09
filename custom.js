@@ -2,7 +2,7 @@ function addToggleButtons() {
   const codeCells = document.querySelectorAll(".jp-CodeCell");
 
   codeCells.forEach((cell) => {
-    // 🚫 Skip cells tagged no_toggle
+    // Skip cells tagged no_toggle
     if (cell.classList.contains("celltag_no_toggle") ||
         cell.classList.contains("tag_no_toggle")) {
       return;

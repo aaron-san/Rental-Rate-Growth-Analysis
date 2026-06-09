@@ -11,14 +11,16 @@
 
 2. Create HTML
 ```bash
-#  normal
 python -m nbconvert index.ipynb --to html
-#  collapsible
-# python -m nbconvert index.ipynb --to html --template lab 
+```
+Publish
+```bash
+python -m nbconvert index.ipynb --to html && git add . && git commit -m "" && git push
+
 ```
 
-3. Push to remote (GitHub
-4. )
+1. Push to remote (GitHub
+2. )
 
 ---
 
