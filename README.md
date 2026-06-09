@@ -5,7 +5,7 @@
 **Data Source:** Zillow Research, U.S. Census Bureau
 
 ---
-## Developer's Workflow
+## Development
 
 1. Run all Cells
 
@@ -18,9 +18,8 @@ Publish
 python -m nbconvert index.ipynb --to html && git add . && git commit -m "" && git push
 
 ```
-
-1. Push to remote (GitHub
-2. )
+> Note: There is a lag after pushing to Github for GitHub Pages to update site
+> In development, open the exported html (via nbconvert) to check results before pushing to Github
 
 ---
 
