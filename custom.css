@@ -13,7 +13,11 @@ body,
   font-family: 'Roboto', sans-serif;
 }
 
+html {
+    padding: 0;
+}
 body {
+    position: relative;
   margin: 0;
 }
 
@@ -202,6 +206,7 @@ div:has(.jp-Cell-outputWrapper) {
     width: 100%;
     height: 200px;
     opacity: 0.7;
+    border-radius: 0;
     /* object-fit: cover; Ensures the image covers the entire container */
     z-index: -1; /* Sends the image to the background */
 }
@@ -385,28 +390,62 @@ div:has(.note) {
 
 /* Background accent container */
 .corp-accents {
-    position: fixed;
-    width: 100%;
-    height: 0; /* allows accents to float over content */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* width: 100%; */
+    height: 100%;        /* allow it to grow */
+    /* min-height: 100%;    at least full viewport */
     pointer-events: none;
     z-index: -1;
 }
 
-/* Accent blocks */
-.accent {
+/* Left dashed line */
+
+body::before {
+    content: "";
     position: absolute;
-    background: rgba(200, 200, 200, 0.40);
-    border-radius: 6px;
+    top: 200px;
+    left: 30px;
+    width: 1px;
+    bottom: 0;
+    pointer-events: none;
+    z-index: -1;
+
+    background-image: repeating-linear-gradient(
+        to bottom,
+        rgba(200, 200, 200, 0.30) 0px,
+        rgba(200, 200, 200, 0.30) 20px, /* Gray from 0 to 20px */
+        transparent 20px,
+        transparent 24px, /* transparent from 20 to 24px */
+        rgba(200, 200, 200, 0.30) 24px,
+        rgba(200, 200, 200, 0.30) 30px, /* Gray from 24 to 30px */
+        transparent 30px,
+        transparent 34px /* transparent from 30 to 34px */
+    );
 }
 
-/* Bottom */
-.a3 { width: 120px; height: 1px; bottom: 30px; left: 50px; }
-.a4 { width: 100px; height: 1px; bottom: 30px; right: 50px; }
+/* Right dashed line */
 
-/* Left vertical */
-.a5 { width: 1px; height: 120px; top: 240px; left: 25px; }
-.a6 { width: 1px; height: 90px; bottom: 120px; left: 25px; }
+body::after {
+    content: "";
+    position: absolute;
+    top: 200px;
+    right: 30px;
+    width: 1px;
+    bottom: 0;
+    pointer-events: none;
+    z-index: -1;
 
-/* Right vertical */
-.a7 { width: 1px; height: 110px; top: 240px; right: 25px; }
-.a8 { width: 1px; height: 80px; bottom: 120px; right: 25px; }
+  background-image: repeating-linear-gradient(
+        to bottom,
+        rgba(200, 200, 200, 0.30) 0px,
+        rgba(200, 200, 200, 0.30) 20px, /* Gray from 0 to 20px */
+        transparent 20px,
+        transparent 24px, /* transparent from 20 to 24px */
+        rgba(200, 200, 200, 0.30) 24px,
+        rgba(200, 200, 200, 0.30) 30px, /* Gray from 24 to 30px */
+        transparent 30px,
+        transparent 34px /* transparent from 30 to 34px */
+    );
+}
